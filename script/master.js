@@ -1,6 +1,6 @@
 window.onscroll = function() {nav()};
 
-var header = document.getElementById("nav");
+var header = document.getElementById("navOffset");
 var navHeadCenter = document.getElementById("navHeadCenter");
 var navHeadSide = document.getElementsByClassName("navHeadSide");
 
