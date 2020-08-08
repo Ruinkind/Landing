@@ -1,6 +1,7 @@
 :root {
   --color-main: rgba(36, 35, 35, 1);
-  --color-mainAcc1: #3C3732;
+  --color-mainAcc1: rgba(60, 55, 50, 1);
+  --color-mainAcc1o: rgba(60, 55, 50, 0.85);
   --color-mainAcc2: rgba(146, 145, 145, 1);
   --color-neutralAcc1: #7C6148;
   --color-neutralAcc1Fade: #beb0a4;
@@ -22,7 +23,6 @@ body {
   padding: 0;
   font-size: 1em;
   color: #000;
-  background-color: var(--color-mainAcc1);
 }
 
 .dividerContainer {
@@ -40,7 +40,13 @@ body {
   z-index: 2;
 }
 
-.dividerSide, .dividerCenter {
+.dividerCenterContainer {
+  position: relative;
+  width: 33%;
+  z-index: 1;
+}
+
+.dividerCenter {
   position: relative;
   width: 33%;
   border-bottom: 1em solid var(--color-neutralAcc1Fade);
@@ -48,40 +54,82 @@ body {
   z-index: 1;
 }
 
-.dividerSide {
-  opacity: 0.1;
-}
-
 .second {
-  border-bottom: 10px solid var(--color-mainAcc1);
 }
 
 .third {
-  border-top: 5px solid var(--color-mainAcc1);
 }
 
 #nav {
   position: fixed;
   width: 100%;
-  padding-bottom: 3em;
+  height: 48px;
+  padding-top: 36px;
+  padding-bottom: 0;
   background-color: white;
   z-index: 3;
 }
 
 #nav > .divider {
-  display: flex;
   justify-content: center;
 }
 
 .navHeadSide {
+  position: fixed;
   margin-right: 6px;
   margin-left: 6px;
+  width: 33%;
+  border-bottom: 1em solid var(--color-neutralAcc1Fade);
+  border-radius: 1px;
+  z-index: 1;
+  opacity: 0.1;
+}
+
+.navHeadSideLeft {
+  left: 0;
+}
+
+.navHeadSideRight {
+  right: 0;
+}
+
+.navHeadCenter {
+  width: 100%;
+}
+
+.navMenuContainer {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.navMenu {
+}
+
+.navMenu > ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0 2vw 0 2vw;
+  height: 36px;
+  list-style: none;
+  line-height: 1.5em;
+  font-size: 1.5em;
+}
+
+.navMenu > ul > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  color: var(--color-mainAcc1o);
 }
 
 .navHeadSideAni {
   opacity: 0;
   width: 0;
-  transition: opacity 0.5s, width 0.3s, ease-in 2s;
+  transition: opacity 0.5s, width 0.3s, ease-in 1s;
 }
 
 .navHeadSideAni2 {
@@ -92,7 +140,7 @@ body {
 
 .navHeadCenterAni {
   width: 60%;
-  transition: width 1s, ease-out 1.4s;
+  transition: width 1s, ease-out 0.6s;
 }
 
 .navHeadCenterAni2 {
@@ -100,8 +148,20 @@ body {
   transition: width 1s, ease-out 1.4s;
 }
 
+.navMenuAni {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s, ease-out 0.3s;
+}
+
+.navMenuAni2 {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility, opacity, ease-out 0.2s;
+}
+
 header {
-  height: 75vh;
+  height: 85vh;
   padding-top: 84px;
   background-color: white;
 }
@@ -159,6 +219,11 @@ header {
 main {
   position: relative;
   width: 85vw;
+  border-top: 30px solid var(--color-mainAcc1);
+  border-bottom: 60px solid var(--color-mainAcc1);
+  border-left: 10px solid var(--color-mainAcc1);
+  border-right: 10px solid var(--color-mainAcc1);
+  border-radius: 4px;
   background-color: var(--color-main);
 }
 
