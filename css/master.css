@@ -142,6 +142,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding-top: 2px;
   color: var(--color-mainAcc1t2);
   font-family: 'Teko', sans-serif;
   text-align: center;
