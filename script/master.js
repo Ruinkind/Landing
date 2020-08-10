@@ -46,17 +46,17 @@ function navMenuAnimation() {
 
 function navRemoveActive() {
   for (var i = 0; i < navActive.length; i++) {
-    navActive[i].classList.remove("active");
+    navActive[i].classList.remove("navActive");
   }
 }
 
 // Nav Active
 for (var i = 0; i < navActive.length; i++) {
   navActive[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
+    var current = document.getElementsByClassName("navActive");
       if (current.length > 0) {
-        current[0].className = current[0].className.replace(" active", "");
+        current[0].className = current[0].className.replace(" navActive", "");
       }
-    this.className += " active";
+    this.className += " navActive";
   })
 }
