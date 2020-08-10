@@ -4,6 +4,7 @@ var header = document.getElementById("navOffset");
 var navHeadCenter = document.getElementById("navHeadCenter");
 var navHeadSide = document.getElementsByClassName("navHeadSide");
 var navMenu = document.getElementById("navMenuContainer");
+var navActive = navMenu.getElementsByClassName("navHref");
 
 var fixed = header.offsetTop;
 
@@ -25,6 +26,7 @@ function navCall() {
     navHeadCenter.classList.remove("navHeadCenterAni");
     navHeadCenter.classList.add("navHeadCenterAni2");
     navMenuAnimation();
+    navRemoveActive();
   }
 }
 
@@ -40,4 +42,21 @@ function navMenuAnimation() {
     navMenu.classList.add("navMenuAni2");
     navMenu.classList.remove("navMenuAni");
   }
+}
+
+function navRemoveActive() {
+  for (var i = 0; i < navActive.length; i++) {
+    navActive[i].classList.remove("active");
+  }
+}
+
+// Nav Active
+for (var i = 0; i < navActive.length; i++) {
+  navActive[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+      if (current.length > 0) {
+        current[0].className = current[0].className.replace(" active", "");
+      }
+    this.className += " active";
+  })
 }

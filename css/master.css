@@ -1,11 +1,12 @@
 :root {
   --color-main: rgba(36, 35, 35, 1);
   --color-mainAcc1: rgba(60, 55, 50, 1);
-  --color-mainAcc1o: rgba(60, 55, 50, 0.85);
+  --color-mainAcc1t1: rgba(60, 55, 50, 0.85);
   --color-mainAcc2: rgba(146, 145, 145, 1);
   --color-neutralAcc1: #7C6148;
   --color-neutralAcc1Fade: #beb0a4;
   --color-orange: #FF8006;
+  --color-oranget1: rgba(255, 128, 6, 0.3);
   --color-orangeAcc1: #FFB36A;
 }
 
@@ -133,19 +134,25 @@ body {
   opacity: 0.4;
 }
 
-.navMenu > ul > li {
+.navMenu > ul > a {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   width: 100%;
-  color: var(--color-mainAcc1o);
+  color: var(--color-mainAcc1t1);
+  text-align: center;
+  text-decoration: none;
 }
 
-.navMenu > ul > li:hover {
+.navMenu > ul > a:hover {
   text-decoration: underline;
-  background-color: var(--color-orange);
+  background-color: var(--color-oranget1);
   transition: background-color 0.4s, text-decoration 0.6s, ease-in 0.4s;
+}
+
+.active {
+  text-decoration: underline;
+  background-color: var(--color-oranget1);
 }
 
 .navHeadSideAni {
