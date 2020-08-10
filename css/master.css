@@ -6,7 +6,7 @@
   --color-mainAcc2: rgba(146, 145, 145, 1);
   --color-neutralAcc1: #7C6148;
   --color-neutralAcc1Fade: #beb0a4;
-  --color-orange: #FF8006;
+  --color-orange: rgba(255, 128, 6, 1);
   --color-oranget1: rgba(255, 128, 6, 0.6);
   --color-orangeAcc1: #FFB36A;
 }
@@ -143,6 +143,8 @@ body {
   align-items: center;
   width: 100%;
   padding-top: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
   color: var(--color-mainAcc1t2);
   font-family: 'Teko', sans-serif;
   text-align: center;
