@@ -62,6 +62,7 @@ body {
 }
 
 .second {
+  margin-top: 3px;
 }
 
 .third {
@@ -134,8 +135,7 @@ body {
 
 .navMini > a:hover {
   transform: scale(0.85);
-  opacity: 1;
-  transition: transform 0.3s, opacity 0.3s, ease-out 0.2s;
+  transition: transform 0.3s, ease-out 0.2s;
 }
 
 .navMenu > ul {
@@ -300,6 +300,7 @@ main {
 .mainHeader {
   display: flex;
   height: 25vh;
+  min-height: 135px;
   width: 100%;
   background-color: var(--color-main);
 }
@@ -347,14 +348,71 @@ main {
 }
 
 .mainHeaderCenter {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  min-height: 135px;
+  border-right: 6px solid var(--color-mainAcc1);
+}
 
-  flex: 1.25;
-  height: 100%;
+.mainHeaderCenter > ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 2.5em;
+}
+
+.mainHeaderCenter > ul > a {
+  text-decoration: none;
+  color: white;
+}
+
+.mainHeaderCenter > ul > a > li {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.mainHeaderCenter > ul > a > li > img {
+  margin-right: 0.5em;
+  padding: 5px;
+  background-color: var(--color-orangeAcc1);
+  border-radius: 3px;
 }
 
 .mainHeaderRight {
+  display: flex;
+  flex-direction: column;
   flex: 3;
+  margin: 3em;
+  overflow: hidden;
+}
+
+.mainHeaderRight > h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.mainHeaderRightBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-top: 0.5em;
+}
+
+.mainHeaderRightBody > span {
+  padding-top: 0.2em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  opacity: 0.7;
 }
 
 .mainHeaderFoot {
@@ -377,8 +435,6 @@ main {
   border-radius: 0 0 4px 4px;
   background-color: var(--color-mainAcc1);
 }
-
-
 
 footer {
 }
