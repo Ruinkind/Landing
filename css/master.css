@@ -237,6 +237,36 @@ header {
   flex: 1;
 }
 
+.headerNavContainer {
+  width: 24px;
+  height: 24px;
+}
+
+@keyframes headerNavAni {
+  from {transform: scale(0.85);}
+  to {transform: scale(1.10);}
+}
+
+.headerNav {
+  object-fit: contain;
+  position: absolute;
+  float: right;
+  bottom: 10vh;
+  right: 2vw;
+  padding: 10px;
+  border: 0.2em solid var(--color-orangeAcc1);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: headerNavAni 1.2s ease-in-out alternate infinite running;
+  transition: background-color 0.5s;
+}
+
+
+.headerNav:hover {
+  background-color: var(--color-oranget1);
+  transition: background-color, ease-in 0.5s;
+}
+
 .headerCenter {
   position: relative;
   flex: 2.5;
@@ -281,10 +311,16 @@ main {
   position: relative;
   width: 85vw;
   height: 1000px;
-  margin-top: -1px;
+  /* margin-top: -1px; */
   background-color: var(--color-main);
   color: white;
   z-index: 1;
+}
+
+#navBtnTop {
+  display: block;
+  margin-top: -11vh;
+  padding-top: 11vh;
 }
 
 .mainTop {
