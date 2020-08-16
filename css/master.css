@@ -61,12 +61,6 @@ body {
   opacity: 0.5;
 }
 
-.second {
-}
-
-.third {
-}
-
 #nav {
   position: fixed;
   width: 100%;
@@ -318,7 +312,7 @@ header {
 
 main {
   position: relative;
-  width: 85vw;
+  width: 75vw;
   background-color: var(--color-main);
   color: white;
   z-index: 1;
@@ -360,14 +354,12 @@ main {
   flex: 1;
   width: 0;
   height: 0;
-  /* padding-left: 2px; */
   border-bottom: 40px solid white;
   border-right: 50px solid transparent;
 }
 
 .mainHeaderLeftEdgeMiddle {
   flex: 4;
-  /* padding-left: 2px; */
   margin-top: -1px;
   margin-bottom: -1px;
   background-color: white;
@@ -377,7 +369,6 @@ main {
   flex: 1;
   width: 0;
   height: 0;
-  /* padding-left: 2px; */
   border-top: 40px solid white;
   border-right: 50px solid transparent;
 }
@@ -465,23 +456,45 @@ main {
   border-top: 5px solid var(--color-mainAcc1);
 }
 
+.mainInnerContainer {
+  display: grid;
+  grid-template-columns: minmax(63vw, 63vw) auto;
+}
+
 .mainContentContainer {
   position: relative;
+  display: grid;
+  width: 63vw;
+  grid-column: 1 / 2;
+  grid-template-columns: 1fr 3fr 1fr;
   box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
   z-index: 2;
   clear: both;
 }
 
-.mainContentContainer:nth-child(2n+1) {
-  float: left;
+.mainContentContainer:nth-child(2n+2) {
   left: -2vw;
-  width: 80vw;
+  width: 65vw;
   background-color: white;
   z-index: 1;
 }
 
+.mainContentHead {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 100%;
+  height: 3vh;
+}
+
 .mainContentBody {
   height: 400px;
+}
+
+.mainContentRight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 .mainBottom {
