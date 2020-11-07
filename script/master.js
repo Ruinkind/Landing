@@ -1,13 +1,17 @@
 window.onscroll = function() {navCall()};
 
-var header = document.getElementById("navOffset");
-var navHeadCenter = document.getElementById("navHeadCenter");
-var navHeadSide = document.getElementsByClassName("navHeadSide");
-var navMenu = document.getElementById("navMenuContainer");
-var navActive = navMenu.getElementsByClassName("navHref");
+var header = document.getElementById("navOffset"),
+    navHeadCenter = document.getElementById("navHeadCenter"),
+    navHeadSide = document.getElementsByClassName("navHeadSide"),
+    navMenu = document.getElementById("navMenuContainer"),
+    navActive = navMenu.getElementsByClassName("navHref"),
+    fixed = header.offsetTop;
 
-var fixed = header.offsetTop;
+var navMiniPrevious = document.getElementById("navMiniPrevious"),
+    navMiniNext = document.getElementById("navMiniNext"),
+    navMiniScroll = document.querySelectorAll(".mainContentContainer");
 
+// Nav Toggle
 function navCall() {
   if (window.pageYOffset > fixed) {
     for (var i = 0; i < navHeadSide.length; i++) {
@@ -30,6 +34,7 @@ function navCall() {
   }
 }
 
+// Nav Menu Animations
 function navMenuCall() {
   setTimeout(navMenuAnimation, 800);
 }
@@ -44,13 +49,14 @@ function navMenuAnimation() {
   }
 }
 
+// Clearing Active Tags
 function navRemoveActive() {
   for (var i = 0; i < navActive.length; i++) {
     navActive[i].classList.remove("navActive");
   }
 }
 
-// Nav Active
+// Nav Active on Select
 for (var i = 0; i < navActive.length; i++) {
   navActive[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("navActive");
@@ -60,3 +66,35 @@ for (var i = 0; i < navActive.length; i++) {
     this.className += " navActive";
   })
 }
+
+// navMini Actions
+let index = 0;
+
+navMiniNext.addEventListener("click", function() {
+  navMiniScrollTo(index++);
+});
+
+navMiniPrevious.addEventListener("click", function() {
+  navMiniScrollTo(index--);
+});
+
+function navMiniScrollTo() {
+  if (index <= 0) {
+    index = 0;
+    navMiniScroll[index].scrollIntoView({block: "center"});
+  } else if (index >= navMiniScroll.length - 1) {
+    index = navMiniScroll.length - 1;
+    navMiniScroll[index].scrollIntoView({block: "center"});
+  }
+  navMiniScroll[index].scrollIntoView({block: "center"});
+};
+
+// var isInViewport = function (elem) {
+//   var bounding = elem.getBoundingClientRect();
+//   return (
+//     bounding.top >= 0 &&
+//     bounding.left >= 0 &&
+//     bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
+//     bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+//   );
+// }
