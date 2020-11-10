@@ -9,6 +9,23 @@
   --color-orange: rgba(255, 128, 6, 1);
   --color-oranget1: rgba(255, 128, 6, 0.6);
   --color-orangeAcc1: #FFB36A;
+
+  /* Hero Grad */
+  --color-grad1: linear-gradient(150deg, #FFD9B3 0%, #FFC184 30%);
+  --color-grad2: linear-gradient(150deg, #FFB36A 25%, #FFA44B 50%, #FF8812 100%);
+  --color-grad3: linear-gradient(150deg, #FFC184 0%, #FFD9B3 70%);
+  --color-grad4: linear-gradient(150deg, #BEECC6 0%, #E0F6E4 70%);
+  --color-grad5: linear-gradient(150deg, #E0F6E4 25%, #BEECC6 50%, #BEECC6 100%);
+  --color-grad6: linear-gradient(150deg, #9BEBA9 0%, #C1F4CA 60%);
+  --color-grad7: linear-gradient(150deg, #C4E2C9 25%, #D3DAD4 70%);
+  --color-grad8: linear-gradient(150deg, #D3DAD4 20%, #85D192 70%);
+  --color-grad9: linear-gradient(150deg, #85D192 25%, #D3DAD4 100%);
+  --color-grad10: linear-gradient(150deg, #D1DDD3 0%, #C4E2C9 70%);
+  --color-grad11: linear-gradient(150deg, #C4E2C9 25%, #D3DAD4 50%, #C4E2C9 100%);
+  --color-grad12: linear-gradient(300deg, #D1DDD3 0%, #C4E2C9 70%);
+  --color-grad13: linear-gradient(150deg, #D1DDD3 0%, #ADD8B4 70%);
+  --color-grad14: linear-gradient(150deg, #C4E2C9 25%, #D3DAD4 50%, #C4E2C9 100%);
+  --color-grad15: linear-gradient(300deg, #D3DAD4 0%, #ABC6AE 50%);
 }
 
 html {
@@ -131,6 +148,10 @@ body {
   transition: transform 0.3s, ease-out 0.2s;
 }
 
+.navMiniNext, .navMiniPrevious {
+  cursor: pointer;
+}
+
 .navMenu > ul {
   display: flex;
   justify-content: space-between;
@@ -235,6 +256,195 @@ header {
   height: 24px;
 }
 
+.headerCenter {
+  flex: 3.5;
+  height: 100%;
+  width: 100%;
+}
+
+.headerCenterGridContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 15% auto;
+  padding: 5px;
+  width: 100%;
+  height: 40vh;
+  transform: skewX(20deg);
+  opacity: 0.8;
+}
+
+.headerCenterGrid1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-bottom: 5px;
+  height: 7%;
+  opacity: 0.9;
+}
+
+.headerCenterGrid2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 80%;
+  opacity: 0.6;
+  border-right: 1px solid var(--color-orangeAcc1);
+  border-left: 3px solid var(--color-oranget1);
+}
+
+.headerCenterGrid3 {
+  display: grid;
+  position: relative;
+  left: 3%;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+  opacity: 0.6;
+  border-right: 1px solid var(--color-orangeAcc1);
+  border-left: 3px solid var(--color-oranget1);
+}
+
+.headerCenterGrid4 {
+  display: grid;
+  position: relative;
+  right: 5%;
+  grid-template-columns: repeat(3, 1fr);
+  height: 40%;
+  opacity: 0.8;
+  border-right: 1px solid var(--color-orangeAcc1);
+  border-left: 5px solid var(--color-orangeAcc1);
+}
+
+.headerCenterGrid5 {
+  display: grid;
+  position: relative;
+  right: 5%;
+  grid-template-columns: repeat(3, 1fr);
+  height: 30%;
+  opacity: 0.8;
+  border-right: 1px solid var(--color-orangeAcc1);
+  border-left: 5px solid var(--color-orangeAcc1);
+}
+
+.headerCenterGrid6 {
+  display: grid;
+  position: relative;
+  right: 5%;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 5px;
+  height: 7%;
+  opacity: 0.9;
+}
+
+.headerGrad1 {
+  background: var(--color-grad2);
+}
+
+.headerGrad2 {
+  background: var(--color-grad1);
+}
+
+.headerGrad3 {
+  background: var(--color-grad3);
+}
+
+.headerGrad4 {
+  background: var(--color-grad4);
+}
+
+.headerGrad5 {
+  background: var(--color-grad5);
+}
+
+.headerGrad6 {
+  background: var(--color-grad6);
+}
+
+.headerGrad7 {
+  background: var(--color-grad7);
+}
+
+.headerGrad8 {
+  background: var(--color-grad8);
+}
+
+.headerGrad9 {
+  background: var(--color-grad9);
+}
+
+.headerGrad10 {
+  background: var(--color-grad10);
+}
+
+.headerGrad11 {
+  background: var(--color-grad11);
+}
+
+.headerGrad12 {
+  background: var(--color-grad12);
+}
+
+.headerGrad13 {
+  background: var(--color-grad13);
+}
+
+.headerGrad14 {
+  background: var(--color-grad14);
+}
+
+.headerGrad15 {
+  background: var(--color-grad15);
+}
+
+.headerGrad16 {
+  background: var(--color-grad1);
+}
+
+.headerGrad17 {
+  background: var(--color-grad3);
+}
+
+.headerGrad18 {
+  background: var(--color-grad2);
+}
+
+.headerCenterOverlay {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  top: 5%;
+  height: 90%;
+  width: 75%;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.headerCenterOverlay h1 {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  border-top: 3px solid var(--color-mainAcc2);
+  border-bottom: 3px solid var(--color-mainAcc2);
+  border-radius: 3px;
+  font-size: 5vw;
+  color: var(--color-mainAcc1);
+  opacity: 0.8;
+  text-transform: uppercase;
+  transform: skewX(-20deg);
+}
+
+.headerCenterOverlayFootnote {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-top: -10vh;
+  opacity: 0.4;
+}
+
+.headerCenterOverlayFootnote h3 {
+  text-transform: uppercase;
+  font-size: 1.1em;
+}
+
 @keyframes headerNavAni {
   from {transform: scale(0.85);}
   to {transform: scale(1.10);}
@@ -257,33 +467,6 @@ header {
 .headerNav:hover {
   background-color: var(--color-oranget1);
   transition: background-color, ease-in 0.5s;
-}
-
-.headerCenter {
-  position: relative;
-  flex: 2.5;
-}
-
-.headerCenterOverlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 25%;
-  height: 50%;
-  width: 100%;
-  opacity: 0.5;
-  white-space: nowrap;
-}
-
-.headerCenterOverlay h1 {
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
-  border-top: 3px solid var(--color-mainAcc2);
-  border-bottom: 3px solid var(--color-mainAcc2);
-  border-radius: 3px;
-  font-size: 5vw;
-  color: var(--color-mainAcc1);
 }
 
 .mainContainer {
