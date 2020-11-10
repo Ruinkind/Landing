@@ -346,64 +346,91 @@ header {
   background: var(--color-grad3);
 }
 
+@keyframes headerGradAni {
+  0% {opacity 0.6; background-position: 0% 50%;}
+  50% {opacity: 0.8; background-position: 100% 50%;}
+  100% {opacity: 0.6; background-position: 0% 50%}
+}
+
+@keyframes headerGradAni2 {
+  0% {opacity 0.9; background-position: 0% 50%;}
+  50% {opacity: 0.6; background-position: 100% 50%;}
+  100% {opacity: 0.9; background-position: 0% 50%}
+}
+
 .headerGrad4 {
-  background: var(--color-grad4);
+  background-image: var(--color-grad4);
+  animation: headerGradAni 4s ease-in-out alternate infinite running;
 }
 
 .headerGrad5 {
-  background: var(--color-grad5);
+  background-image: var(--color-grad5);
+  animation: headerGradAni 4s ease-in-out alternate infinite running;
 }
 
 .headerGrad6 {
-  background: var(--color-grad6);
+  background-image: var(--color-grad6);
+  animation: headerGradAni 4s ease-in-out alternate infinite running;
 }
 
 .headerGrad7 {
-  background: var(--color-grad7);
+  background-image: var(--color-grad7);
+  animation: headerGradAni2 8s ease-in alternate-reverse infinite running;
 }
 
 .headerGrad8 {
-  background: var(--color-grad8);
+  background-image: var(--color-grad8);
+  animation: headerGradAni2 8s ease-in alternate-reverse infinite running;
 }
 
 .headerGrad9 {
-  background: var(--color-grad9);
+  background-image: var(--color-grad9);
+  animation: headerGradAni2 8s ease-in alternate-reverse infinite running;
 }
 
 .headerGrad10 {
-  background: var(--color-grad10);
+  background-image: var(--color-grad10);
+  animation: headerGradAni 4s ease-in-out alternate infinite running;
 }
 
 .headerGrad11 {
-  background: var(--color-grad11);
+  background-image: var(--color-grad11);
+  animation: headerGradAni 4s ease-in-out alternate infinite running;
 }
 
 .headerGrad12 {
-  background: var(--color-grad12);
+  background-image: var(--color-grad12);
+  animation: headerGradAni 4s ease-in-out alternate infinite running;
 }
 
 .headerGrad13 {
-  background: var(--color-grad13);
+  background-image: var(--color-grad13);
+  animation: headerGradAni 4s ease-in-out alternate infinite running;
 }
 
 .headerGrad14 {
-  background: var(--color-grad14);
+  background-image: var(--color-grad14);
+  animation: headerGradAni 4s ease-in-out alternate infinite running;
 }
 
 .headerGrad15 {
-  background: var(--color-grad15);
+  background-image: var(--color-grad15);
+  animation: headerGradAni 4s ease-in-out alternate infinite running;
 }
 
 .headerGrad16 {
-  background: var(--color-grad1);
+  background-image: var(--color-grad1);
+  animation: headerGradAni 4s ease-in-out alternate infinite running;
 }
 
 .headerGrad17 {
-  background: var(--color-grad3);
+  background-image: var(--color-grad3);
+  animation: headerGradAni 4s ease-in-out alternate infinite running;
 }
 
 .headerGrad18 {
-  background: var(--color-grad2);
+  background-image: var(--color-grad2);
+  animation: headerGradAni 4s ease-in-out alternate infinite running;
 }
 
 .headerCenterOverlay {
