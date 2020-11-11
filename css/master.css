@@ -279,7 +279,7 @@ header {
   grid-template-columns: repeat(3, 1fr);
   padding-bottom: 5px;
   height: 7%;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .headerCenterGrid2 {
@@ -343,7 +343,7 @@ header {
   grid-template-columns: repeat(3, 1fr);
   padding-top: 5px;
   height: 7%;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 @keyframes headerGradAni {
@@ -471,8 +471,6 @@ header {
   text-transform: uppercase;
   color: var(--color-mainAcc1);
   opacity: 0.9;
-  border-top: 3px solid var(--color-mainAcc2t);
-  border-bottom: 3px solid var(--color-mainAcc2t);
   border-radius: 3px;
 }
 
