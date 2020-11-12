@@ -1,13 +1,13 @@
 window.onscroll = function() {navCall()};
 
-var header = document.getElementById("navOffset"),
+let header = document.getElementById("navOffset"),
     navHeadCenter = document.getElementById("navHeadCenter"),
     navHeadSide = document.getElementsByClassName("navHeadSide"),
     navMenu = document.getElementById("navMenuContainer"),
     navActive = navMenu.getElementsByClassName("navHref"),
     fixed = header.offsetTop;
 
-var navMiniPrevious = document.getElementById("navMiniPrevious"),
+let navMiniPrevious = document.getElementById("navMiniPrevious"),
     navMiniNext = document.getElementById("navMiniNext"),
     navMiniScroll = document.querySelectorAll(".mainContentContainer");
 
