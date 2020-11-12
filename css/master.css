@@ -250,115 +250,17 @@ header {
   align-content: center;
   align-items: center;
   height: 100%;
-  overflow: hidden;
 }
 
-.headerLeft {
+.headerLeft, .headerRight {
   flex: 1;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.headerRight {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+  height: 100%;
 }
 
 .headerCenter {
   flex: 3.5;
   display: flex;
   justify-content: center;
-}
-
-.headerLeftGridContainer {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  left: -110%;
-  width: 85%;
-  height: 35vh;
-  transform: skewX(20deg);
-  opacity: 0.8;
-}
-
-.headerRightGridContainer {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  right: -110%;
-  width: 85%;
-  height: 35vh;
-  transform: skewX(20deg);
-  opacity: 0.8;
-}
-
-.headerLeftGrid1, .headerRightGrid1 {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding-bottom: 5px;
-  height: 7%;
-  opacity: 1;
-}
-
-.headerLeftGrid2, .headerRightGrid2 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 69%;
-  opacity: 1;
-  border-right: 1px solid var(--color-orangeAcc1);
-  border-left: 3px solid var(--color-oranget1);
-}
-
-.headerLeftGrid3, .headerRightGrid3 {
-  display: grid;
-  position: relative;
-  left: 10%;
-  grid-template-columns: 1fr;
-  height: 100%;
-  opacity: 1;
-  border-right: 1px solid var(--color-orangeAcc1);
-  border-left: 3px solid var(--color-oranget1);
-}
-
-.headerLeftGrid4, .headerRightGrid4 {
-  display: grid;
-  position: relative;
-  right: 15%;
-  grid-template-columns: 0.5fr 1fr;
-  height: 40%;
-  opacity: 1;
-  border-right: 1px solid var(--color-orangeAcc1);
-  border-left: 5px solid var(--color-orangeAcc1);
-}
-
-.headerRightGrid4 {
-  grid-template-columns: 1fr 0.5fr;
-}
-
-.headerLeftGrid5, .headerRightGrid5 {
-  display: grid;
-  position: relative;
-  right: 15%;
-  grid-template-columns: 0.5fr 1fr;
-  height: 30%;
-  opacity: 1;
-  border-right: 1px solid var(--color-orangeAcc1);
-  border-left: 5px solid var(--color-orangeAcc1);
-}
-
-.headerRightGrid5 {
-  grid-template-columns: 1fr 0.5fr;
-}
-
-.headerLeftGrid6, .headerRightGrid6 {
-  display: grid;
-  position: relative;
-  right: 15%;
-  grid-template-columns: 1fr;
-  padding-top: 5px;
-  height: 7%;
-  opacity: 1;
 }
 
 .headerCenterGridContainer {
