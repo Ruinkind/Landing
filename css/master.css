@@ -12,7 +12,28 @@
   --color-orangeAcc1: #FFB36A;
 
   /* Hero Grad */
-  --color-grad1: linear-gradient(150deg, #FFD9B3 0%, #FFC184 30%);
+  --color-grad1: linear-gradient(150deg, #96969C 0%, #6D6D74 30%);
+  --color-grad2: linear-gradient(150deg, #AEAEB6 25%, #CACACE 50%, #DFDFE2 100%);
+  --color-grad3: linear-gradient(150deg, #DFDFE2 0%, #F4F4F5 70%);
+  --color-grad4: linear-gradient(150deg, #F6F5F3 0%, #CBCBCE 70%);
+  --color-grad5: linear-gradient(150deg, #CBCBCE 25%, #ABABB0 50%, #ABABB0 100%);
+  --color-grad6: linear-gradient(150deg, #818188 0%, #CBCBCE 60%);
+  --color-grad7: linear-gradient(150deg, #DFDFDF 25%, #F6F5F3 70%);
+  --color-grad8: linear-gradient(150deg, #F6F5F3 20%, #818188 70%);
+  --color-grad9: linear-gradient(150deg, #818188 25%, #F6F5F3 100%);
+  --color-grad10: linear-gradient(150deg, #EBEBF5 0%, #D5D8E2 70%);
+  --color-grad11: linear-gradient(150deg, #D5D8E2 25%, #EBEBF5 50%, #D5D8E2 100%);
+  --color-grad12: linear-gradient(300deg, #D5D8E2 0%, #EBEBF5 70%);
+  --color-grad13: linear-gradient(150deg, #D5D8E2 0%, #D5D5D7 70%);
+  --color-grad14: linear-gradient(150deg, #DFDFDF 25%, #F6F5F3 50%, #DFDFDF 100%);
+  --color-grad15: linear-gradient(300deg, #F6F5F3 0%, #D5D8E2 50%);
+  --color-grad16: linear-gradient(150deg, rgba(62, 61, 61, 0.5) 20%, rgba(205, 203, 203, 0.55) 50%);
+  --color-grad17: linear-gradient(150deg, rgba(100, 100, 100, 1) 20%, rgba(225, 224, 224, 0.8) 50%);
+  --color-grad18: linear-gradient(150deg, rgba(62, 61, 61, 1) 20%, rgba(175, 170, 170, 1) 50%);
+  --color-grad19: linear-gradient(150deg, rgba(228, 223, 219, 1) 20%, rgba(218, 215, 215, 1) 80%);
+  --color-grad20: linear-gradient(150deg, rgba(158, 153, 149, 1) 20%, rgba(218, 215, 215, 1) 80%);
+
+  /* --color-grad1: linear-gradient(150deg, #FFD9B3 0%, #FFC184 30%);
   --color-grad2: linear-gradient(150deg, #FFB36A 25%, #FFA44B 50%, #FF8812 100%);
   --color-grad3: linear-gradient(150deg, #FFC184 0%, #FFD9B3 70%);
   --color-grad4: linear-gradient(150deg, #BEECC6 0%, #E0F6E4 70%);
@@ -27,6 +48,11 @@
   --color-grad13: linear-gradient(150deg, #D1DDD3 0%, #ADD8B4 70%);
   --color-grad14: linear-gradient(150deg, #C4E2C9 25%, #D3DAD4 50%, #C4E2C9 100%);
   --color-grad15: linear-gradient(300deg, #D3DAD4 0%, #ABC6AE 50%);
+  --color-grad16: linear-gradient(150deg, rgba(62, 61, 61, 0.5) 20%, rgba(205, 203, 203, 0.55) 50%);
+  --color-grad17: linear-gradient(150deg, rgba(100, 100, 100, 1) 20%, rgba(225, 224, 224, 0.8) 50%);
+  --color-grad18: linear-gradient(150deg, rgba(62, 61, 61, 1) 20%, rgba(175, 170, 170, 1) 50%);
+  --color-grad19: linear-gradient(150deg, rgba(228, 223, 219, 1) 20%, rgba(218, 215, 215, 1) 80%);
+  --color-grad20: linear-gradient(150deg, rgba(158, 153, 149, 1) 20%, rgba(218, 215, 215, 1) 80%); */
 }
 
 html {
@@ -46,7 +72,14 @@ body {
 }
 
 .heroContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
   min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 .dividerContainer {
@@ -73,10 +106,19 @@ body {
 .dividerCenter {
   position: relative;
   width: 33%;
-  border-bottom: 1.3vh solid var(--color-orangeAcc1);
+  border-bottom: 1.3vh solid var(--color-mainAcc2);
   border-radius: 1px;
   z-index: 1;
   opacity: 0.5;
+}
+
+.dividerHeroBottom {
+  width: 100%;
+}
+
+.dividerHeroBottom > div > div {
+  border-bottom: 1.3vh solid var(--color-main);
+  opacity: 0.1;
 }
 
 #nav {
@@ -103,7 +145,7 @@ body {
   margin-right: 6px;
   margin-left: 6px;
   width: 33%;
-  border-bottom: 1.3vh solid var(--color-orangeAcc1);
+  border-bottom: 1.3vh solid var(--color-main);
   border-radius: 1px;
   z-index: 1;
   opacity: 0.1;
@@ -238,112 +280,130 @@ body {
 
 header {
   display: flex;
-  flex-direction: column;
-  height: 80vh;
-  padding-top: 84px;
-  background-color: white;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  min-height: 80vh;
+  max-height: 80vh;
+  width: 100%;
+  padding-top: 11vh;
+  z-index: 1;
+  transform: skewX(20deg);
+}
+
+.headerLeft {
+  position: relative;
+  right: 10%;
+  height: 100%;
+  width: 40vw;
+  background-image: linear-gradient(90deg, var(--color-main) 99.99%, transparent 100%);
+  z-index: 2;
 }
 
 .headerMidContainer {
+  position: absolute;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  height: 70%;
+  align-items: flex-start;
+  width: 100%;
+  z-index: 1;
 }
 
-.headerLeft, .headerRight {
-  flex: 1;
+.headerCenterBottom {
+  display: flex;
+  align-self: flex-end;
+  margin-left: -10vw;
+  margin-right: -10vw;
+  width: 100%;
+  height: 50%;
+}
+
+.headerCenterBottomLeft {
+  flex: 3;
+}
+
+.headerCenterBottomRight {
+  flex: 0.999;
+}
+
+.headerRight {
+  position: relative;
+  left: 10%;
   height: 100%;
+  width: 40vw;
+  background-image: linear-gradient(90deg, transparent 0.01%, var(--color-main) 0.02%);
+  z-index: 2;
 }
 
 .headerCenter {
-  flex: 3.5;
   display: flex;
   justify-content: center;
+  width: 100%;
+  background: white;
 }
 
 .headerCenterGridContainer {
+  position: relative;
   display: flex;
   flex-direction: column;
-  width: 80%;
+  align-self: center;
+  width: 100%;
   height: 40vh;
-  transform: skewX(20deg);
+  transform-origin: 0% 90%;
   opacity: 0.87;
+  overflow: hidden;
 }
 
 .headerCenterGrid1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding-bottom: 5px;
-  height: 7%;
+  height: 32.5%;
+  width: 100%;
+  align-self: center;
   opacity: 1;
+  background-image: url(../img/headerGridBg2.png);
+  background-size: 105% 110%;
+  background-position: 40% 100%;
+  border-right: 1px solid #DFDFE2;
+  border-left: 3px solid #AEAEB6;
 }
 
 .headerCenterGrid2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  height: 69%;
-  opacity: 1;
-  background-image: url(../img/headerGridBg2.png);
-  background-size: 105% 110%;
-  background-position: 40% 100%;
-  border-right: 1px solid var(--color-orangeAcc1);
-  border-left: 3px solid var(--color-oranget1);
-}
-
-.headerCenterGrid3 {
-  display: grid;
-  position: relative;
-  left: 3%;
-  grid-template-columns: repeat(3, 1fr);
-  height: 100%;
+  height: 42.5%;
+  width: 100%;
+  align-self: center;
   opacity: 1;
   background-image: url(../img/headerGridBg3.png);
   background-size: 105% 110%;
   background-position: 100% 0%;
-  border-right: 1px solid var(--color-orangeAcc1);
-  border-left: 3px solid var(--color-oranget1);
+  border-right: 1px solid #DFDFE2;
+  border-left: 3px solid #AEAEB6;
 }
 
-.headerCenterGrid4 {
+.headerCenterGrid3 {
   display: grid;
-  position: relative;
-  right: 5%;
   grid-template-columns: repeat(3, 1fr);
-  height: 40%;
+  height: 13%;
+  width: 100%;
+  align-self: center;
   opacity: 1;
   background-image: url(../img/headerGridBg4.png);
   background-size: 110% 120%;
   background-position: 5% 50%;
-  border-right: 1px solid var(--color-orangeAcc1);
-  border-left: 5px solid var(--color-orangeAcc1);
 }
 
-.headerCenterGrid5 {
+.headerCenterGrid4 {
   display: grid;
-  position: relative;
-  right: 5%;
   grid-template-columns: repeat(3, 1fr);
-  height: 30%;
+  height: 12%;
+  width: 100%;
+  align-self: center;
   opacity: 1;
   background-image: url(../img/headerGridBg5.png);
   background-size: 110% 120%;
   background-position: 5% 50%;
-  border-right: 1px solid var(--color-orangeAcc1);
-  border-left: 5px solid var(--color-orangeAcc1);
-}
-
-.headerCenterGrid6 {
-  display: grid;
-  position: relative;
-  right: 5%;
-  grid-template-columns: repeat(3, 1fr);
-  padding-top: 5px;
-  height: 7%;
-  opacity: 1;
 }
 
 @keyframes headerGradAni {
@@ -365,117 +425,91 @@ header {
 }
 
 .headerGrad1 {
-  background-image: var(--color-grad2);
-  animation: headerGradAni3 4s ease-out alternate infinite running;
-}
-
-.headerGrad2 {
-  background-image: var(--color-grad1);
-  animation: headerGradAni3 5s ease-out alternate infinite running;
-}
-
-.headerGrad3 {
-  background-image: var(--color-grad3);
-  animation: headerGradAni3 6s ease-out alternate infinite running;
-}
-
-.headerGrad4 {
   background-image: var(--color-grad4);
   opacity: 0.5;
   animation: headerGradAni 4s ease-out alternate infinite running;
 }
 
-.headerGrad5 {
+.headerGrad2 {
   background-image: var(--color-grad5);
   opacity: 0.5;
   animation: headerGradAni 5s ease-out alternate infinite running;
 }
 
-.headerGrad6 {
+.headerGrad3 {
   background-image: var(--color-grad6);
   opacity: 0.5;
   animation: headerGradAni 6s ease-out alternate infinite running;
 }
 
-.headerGrad7 {
+.headerGrad4 {
   background-image: var(--color-grad7);
   opacity: 0.5;
   animation: headerGradAni2 12s ease-in alternate-reverse infinite running;
 }
 
-.headerGrad8 {
+.headerGrad5 {
   background-image: var(--color-grad8);
   opacity: 0.5;
   animation: headerGradAni2 12s ease-in alternate-reverse infinite running;
 }
 
-.headerGrad9 {
+.headerGrad6 {
   background-image: var(--color-grad9);
   opacity: 0.5;
   animation: headerGradAni2 12s ease-in alternate-reverse infinite running;
 }
 
-.headerGrad10 {
+.headerGrad7 {
   background-image: var(--color-grad10);
   opacity: 0.5;
   animation: headerGradAni 6s ease-out alternate infinite running;
 }
 
-.headerGrad11 {
+.headerGrad8 {
   background-image: var(--color-grad11);
   opacity: 0.5;
   animation: headerGradAni 5s ease-out alternate infinite running;
 }
 
-.headerGrad12 {
+.headerGrad9 {
   background-image: var(--color-grad12);
   opacity: 0.5;
   animation: headerGradAni 4s ease-out alternate infinite running;
 }
 
-.headerGrad13 {
+.headerGrad10 {
   background-image: var(--color-grad13);
   opacity: 0.5;
   animation: headerGradAni 6s ease-out alternate infinite running;
 }
 
-.headerGrad14 {
+.headerGrad11 {
   background-image: var(--color-grad14);
   opacity: 0.5;
   animation: headerGradAni 5s ease-out alternate infinite running;
 }
 
-.headerGrad15 {
+.headerGrad12 {
   background-image: var(--color-grad15);
   opacity: 0.5;
   animation: headerGradAni 4s ease-out alternate infinite running;
 }
 
-.headerGrad16 {
-  background-image: var(--color-grad1);
-  animation: headerGradAni3 4s ease-out alternate infinite running;
-}
-
-.headerGrad17 {
-  background-image: var(--color-grad3);
-  animation: headerGradAni3 4s ease-out alternate infinite running;
-}
-
-.headerGrad18 {
-  background-image: var(--color-grad2);
-  animation: headerGradAni3 4s ease-out alternate infinite running;
+.headerCenterOverlayContainer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 .headerCenterOverlay {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  top: 3%;
-  height: 94%;
-  width: 78%;
+  height: 100%;
+  width: 45%;
   white-space: nowrap;
   background: rgba(255, 255, 255, 0.35);
   transition: background-color 1s;
@@ -489,49 +523,37 @@ header {
 .headerCenterOverlay h1 {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: auto;
+  padding-top: 2%;
   height: 100%;
   transform: skewX(-20deg);
+  transform-origin: 0% 45%;
   font-family: 'Frank Ruhl Libre', serif;
   text-transform: uppercase;
-  opacity: 0.85;
+  opacity: 0.65;
   border-radius: 3px;
   transition: color 0.5s, font-size 0.2s;
 }
 
 .headerCenterOverlay h1 > span {
   padding-right: 5%;
-  font-size: 2.8vw;
+  font-size: 2.5vw;
 }
 
 .headerCenterOverlay a {
   display: flex;
   height: 100%;
   width: 100%;
-  font-size: 2.2vw;
+  font-size: 2.0vw;
   color: var(--color-main);
   text-decoration: none;
 }
 
 .headerCenterOverlay a:hover {
   color: var(--color-mainAcc1t1);
-  font-size: 2.35vw;
+  font-size: 2.15vw;
   transition: color 0.3s, font-size 0.3s;
-}
-
-.headerCenterOverlayFootnote {
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  align-self: center;
-  bottom: 1%;
-  color: var(--color-main);
-  opacity: 0.6;
-}
-
-.headerCenterOverlayFootnote h3 {
-  text-transform: uppercase;
-  font-size: 1.1em;
 }
 
 @keyframes headerNavAni {
@@ -539,147 +561,54 @@ header {
   to {transform: scale(1.10);}
 }
 
+.headerNavContainer {
+  transform: skewX(-20deg);
+}
+
 .headerNav {
   object-fit: contain;
   position: absolute;
   float: right;
-  bottom: 10vh;
-  right: 2vw;
+  bottom: 1.2vh;
+  right: 12vw;
   padding: 10px;
-  border: 0.2em solid var(--color-orangeAcc1);
+  border: 0.2em solid var(--color-mainAcc1t2);
   border-radius: 50%;
   opacity: 0.4;
   animation: headerNavAni 1.2s ease-in-out alternate infinite running;
   transition: background-color 0.5s;
+  z-index: 5;
 }
 
 .headerNav:hover {
-  background-color: var(--color-oranget1);
+  background-color: var(--color-mainAcc1t2);
   transition: background-color, ease-in 0.5s;
 }
 
 .headerBottom {
   position: relative;
-  left: 1.2%;
-  align-self: center;
-  margin-bottom: 2em;
-  width: 51vw;
-  height: 40%;
-  /* transform: skewX(-20deg); */
-  color: var(--color-mainAcc1);
-  font-family: 'Hind', sans-serif;
-}
-
-.headerBottomTop {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  height: 5%;
-}
-
-.headerBottomContentContainer {
   display: flex;
-  flex-direction: row;
-  height: 100%;
-}
-
-.headerBottomLeft, .headerBottomCenter, .headerBottomRight {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  height: 100%;
-  background: #8f9b9a;
-  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28)
-}
-
-.headerBottomCenter {
-  height: 90%;
-  background: rgb(210 218 219);
-}
-
-.headerBottomLeftTop, .headerBottomCenterTop, .headerBottomRightTop {
-  display: grid;
-  position: relative;
-  grid-template-columns:  0.1fr 1fr;
-  grid-template-areas: "headerBottomTopGrad1 headerBottomTopGrad2";
-  align-self: flex-end;
-  /* margin-right: 0.7em; */
+  justify-content: space-around;
   width: 100%;
-  border-bottom: 2px solid var(--color-mainAcc1t2);
-}
-
-.headerBottomCenterTop {
-  border-bottom: 2px solid var(--color-mainAcc1t2);
-}
-
-.headerBottomLeftContent, .headerBottomCenterContent, .headerBottomRightContent {
-  align-self: flex-end;
-  width: 80%;
-}
-
-.headerBottomLeft h3, .headerBottomCenter h3, .headerBottomRight h3 {
-  grid-row: 1 / 1;
-  grid-column: 2 / 3;
-  margin: 0;
-  padding-top: 0.4em;
-  padding-bottom: 0.2em;
-  padding-right: 0.5em;
-  /* transform: skewX(20deg); */
-  line-height: 100%;
-  text-transform: uppercase;
-  font-family: 'Teko', sans-serif;
-  font-weight: 300;
-  font-size: 2.5em;
-  text-align: right;
+  height: 100%;
+  color: white;
+  font-family: 'Hind', sans-serif;
   z-index: 2;
 }
 
-.headerBottomTopGradLeft {
-  grid-row: 1 / 1;
-  grid-column: 1 / 2;
-  opacity: 1;
+.headerBottomLeft {
+  flex: 1;
+  margin-left: 18vw;
+  margin-right: -5em;
+  padding-left: 5em;
+  padding-right: 7em;
+  background: red;
+  text-align: right;
 }
 
-.headerBottomTopGradRight {
-  grid-row: 1 / 1;
-  grid-column: 2 / 3;
-  opacity: 0.4;
-}
-
-.headerBottomLeft h3 > span {
-  padding-right: 0.3em;
-  text-transform: lowercase;
-  font-family: 'Hind', sans-serif;
-  font-size: 0.6em;
-  color: var(--color-main);
-  opacity: 1;
-}
-
-.headerBottomLeft h3 > span span {
-  opacity: 0.7;
-}
-
-.headerBottomLeft .headerBottomLeftTop .headerBottomTitleSpan, .headerBottomTitleSpan {
-  padding-right: 0;
-  line-height: 100%;
-  text-transform: uppercase;
-  font-family: 'Teko', sans-serif;
-  font-size: 1.2em;
-  font-weight: 300;
-  opacity: 0.65;
-}
-
-.headerBottomLeft ul, .headerBottomCenter ul, .headerBottomRight ul  {
-  margin: 0;
-  padding: 0.6em 1.3em 0em 0.6em;
-  font-family: 'Hind', sans-serif;
-  font-size: 1.2em;
-  font-weight: 500;
-  text-align: left;
-  list-style: none;
-}
-
-.headerBottomLeft li {
-  /* transform: skewX(20deg); */
+.headerBottomRight {
+  flex: 1;
+  background: blue;
 }
 
 .mainContainer {
