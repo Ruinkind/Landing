@@ -14,7 +14,7 @@ let navMiniPrevious = document.getElementById("navMiniPrevious"),
     navMiniScroll = document.querySelectorAll(".mainContentContainer");
 
 // heroBottom vars
-let heroRightHeader = document.querySelectorAll(".headerBottomRightHeader"),
+let heroRightHeader = document.querySelectorAll(".headerBottomRightHeaderContainer"),
     heroRightLi = document.querySelectorAll(".headerBottomRightLiContainer"),
     heroRightLiBorder = document.querySelectorAll(".headerBottomRightLiBottom"),
     heroRightLists = document.querySelectorAll(".headerBottomRightList");
