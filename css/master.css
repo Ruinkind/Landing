@@ -298,7 +298,7 @@ header {
   height: 50%;
   background-image: url(../img/headerBottomBg1.png);
   background-size: cover;
-  background-position: right;
+  background-position: center right;
 }
 
 .headerRight {
