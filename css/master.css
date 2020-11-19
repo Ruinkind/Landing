@@ -738,9 +738,18 @@ header {
   visibility: visible;
 }
 
-.heroLiBorder1Ani {
+.heroLiBorder0Ani {
   animation-name: heroLiBorder1Ani;
-  animation-duration: 0.6s;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  visibility: visible;
+}
+
+.heroLiBorder1Ani {
+  animation-name: heroLiBorder2Ani;
+  animation-duration: 8s;
   animation-iteration-count: 1;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
@@ -748,8 +757,8 @@ header {
 }
 
 .heroLiBorder2Ani {
-  animation-name: heroLiBorder2Ani;
-  animation-duration: 0.6s;
+  animation-name: heroLiBorder3Ani;
+  animation-duration: 6s;
   animation-iteration-count: 1;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
@@ -757,17 +766,8 @@ header {
 }
 
 .heroLiBorder3Ani {
-  animation-name: heroLiBorder3Ani;
-  animation-duration: 0.6s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  visibility: visible;
-}
-
-.heroLiBorder4Ani {
   animation-name: heroLiBorder4Ani;
-  animation-duration: 0.6s;
+  animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: ease;
   animation-fill-mode: forwards;

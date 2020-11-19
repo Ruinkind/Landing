@@ -65,7 +65,7 @@ function navRemoveActive() {
 }
 
 // Nav Active on Select
-for (var i = 0; i < navActive.length; i++) {
+for (let i = 0; i < navActive.length; i++) {
   navActive[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("navActive");
       if (current.length > 0) {
@@ -97,25 +97,30 @@ function navMiniScrollTo() {
   navMiniScroll[index].scrollIntoView({block: "center"});
 };
 
-// var isInViewport = function (elem) {
-//   var bounding = elem.getBoundingClientRect();
-//   return (
-//     bounding.top >= 0 &&
-//     bounding.left >= 0 &&
-//     bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
-//     bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-//   );
-// }
-
 // heroBottom Animations
 setTimeout (() => {
-  heroRightHeader[0].classList.add("heroHeaderAni")
-  setTimeout (() => {heroRightLi[3].classList.add("heroLiAni")}, 500)
-  setTimeout (() => {heroRightLiBorder[3].classList.add("heroLiBorder4Ani")}, 1200)
-  setTimeout (() => {heroRightLi[2].classList.add("heroLiAni")}, 1200)
-  setTimeout (() => {heroRightLiBorder[2].classList.add("heroLiBorder3Ani")}, 1900)
-  setTimeout (() => {heroRightLi[1].classList.add("heroLiAni")}, 1900)
-  setTimeout (() => {heroRightLiBorder[1].classList.add("heroLiBorder2Ani")}, 2600)
-  setTimeout (() => {heroRightLi[0].classList.add("heroLiAni")}, 2600)
-  setTimeout (() => {heroRightLiBorder[0].classList.add("heroLiBorder1Ani")}, 3300)
+  heroRightHeader[0].classList.add("heroHeaderAni");
+  heroRightLiAni();
 }, 1000);
+
+// heroBottonLi reversed recusive loop
+function heroRightLiAni () {
+  let len = heroRightLi.length - 1;
+  (function func(i) {
+    if (i >= 0) {
+      heroRightLi[i].classList.add("heroLiAni");
+
+      let waitAni = document.querySelector(".heroLiAni");
+      waitAni.addEventListener("transitionend", heroLiBorder());
+
+      setTimeout(function() {func(--i); }, 800)
+    }
+  })(len);
+};
+
+// heroBottomBorder call
+function heroLiBorder() {
+  for (var i = 0; i < heroRightLiBorder.length; i++) {
+    heroRightLiBorder[i].classList.add("heroLiBorder"+[i]+"Ani")
+  }
+};
