@@ -14,10 +14,10 @@ let navMiniPrevious = document.getElementById("navMiniPrevious"),
     navMiniScroll = document.querySelectorAll(".mainContentContainer");
 
 // heroBottom vars
-let heroLeftHeader = document.querySelectorAll(".headerCenterBottomLeftHeader"),
-    heroRightLi = document.querySelectorAll(".headerCenterBottomRightLiContainer"),
-    heroRightLiBorder = document.querySelectorAll(".headerCenterBottomRightLiBottom"),
-    heroRightLists = document.querySelectorAll(".headerCenterBottomRightList");
+let heroRightHeader = document.querySelectorAll(".headerBottomRightHeader"),
+    heroRightLi = document.querySelectorAll(".headerBottomRightLiContainer"),
+    heroRightLiBorder = document.querySelectorAll(".headerBottomRightLiBottom"),
+    heroRightLists = document.querySelectorAll(".headerBottomRightList");
 
 // Nav Toggle
 function navCall() {
@@ -109,10 +109,13 @@ function navMiniScrollTo() {
 
 // heroBottom Animations
 setTimeout (() => {
-  setTimeout (() => {heroRightLi[0].classList.add("heroLiAni")}, 500)
-  setTimeout (() => {heroRightLiBorder[0].classList.add("heroLiBorder1Ani")}, 900)
-  setTimeout (() => {heroRightLi[1].classList.add("heroLiAni")}, 1200)
-  setTimeout (() => {heroRightLiBorder[1].classList.add("heroLiBorder2Ani")}, 1600)
-  setTimeout (() => {heroRightLi[2].classList.add("heroLiAni")}, 1900)
-  setTimeout (() => {heroRightLiBorder[2].classList.add("heroLiBorder3Ani")}, 2300)
+  heroRightHeader[0].classList.add("heroHeaderAni")
+  setTimeout (() => {heroRightLi[3].classList.add("heroLiAni")}, 500)
+  setTimeout (() => {heroRightLiBorder[3].classList.add("heroLiBorder4Ani")}, 1200)
+  setTimeout (() => {heroRightLi[2].classList.add("heroLiAni")}, 1200)
+  setTimeout (() => {heroRightLiBorder[2].classList.add("heroLiBorder3Ani")}, 1900)
+  setTimeout (() => {heroRightLi[1].classList.add("heroLiAni")}, 1900)
+  setTimeout (() => {heroRightLiBorder[1].classList.add("heroLiBorder2Ani")}, 2600)
+  setTimeout (() => {heroRightLi[0].classList.add("heroLiAni")}, 2600)
+  setTimeout (() => {heroRightLiBorder[0].classList.add("heroLiBorder1Ani")}, 3300)
 }, 1000);
