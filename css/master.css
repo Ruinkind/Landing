@@ -540,7 +540,8 @@ header {
 .headerCenterOverlay a:hover {
   color: var(--color-mainAcc1t1);
   font-size: 2.15vw;
-  transition: color 0.3s, font-size 0.3s;
+  transition: color 0.3s, font-size 0.3s, translate3d(0,0,0);
+  backface-visibility: hidden;
 }
 
 @keyframes headerNavAni {
