@@ -21,12 +21,15 @@ let heroRightHeader = document.querySelectorAll(".headerBottomRightHeaderContain
 
 // Nav Toggle
 function navCall() {
+  let dividerCenter = document.querySelector(".dividerCenter")
+
   if (window.pageYOffset > fixed) {
     for (var i = 0; i < navHeadSide.length; i++) {
       navHeadSide[i].classList.add("navHeadSideAni");
       navHeadSide[i].classList.remove("navHeadSideAni2");
     }
     navHeadCenter.classList.add("navHeadCenterAni");
+    dividerCenter.style.borderBottom = "1.3vh solid var(--color-orangeAcc1)";
     navHeadCenter.classList.remove("navHeadCenterAni2");
     navMenuCall();
   }
@@ -37,6 +40,7 @@ function navCall() {
     }
     navHeadCenter.classList.remove("navHeadCenterAni");
     navHeadCenter.classList.add("navHeadCenterAni2");
+    dividerCenter.style.borderBottom = "1.3vh solid var(--color-mainAcc2)";
     navMenuAnimation();
     navRemoveActive();
   }
