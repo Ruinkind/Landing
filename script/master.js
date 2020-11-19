@@ -1,5 +1,6 @@
 window.onscroll = function() {navCall()};
 
+// nav Vars
 let header = document.getElementById("navOffset"),
     navHeadCenter = document.getElementById("navHeadCenter"),
     navHeadSide = document.getElementsByClassName("navHeadSide"),
@@ -7,9 +8,16 @@ let header = document.getElementById("navOffset"),
     navActive = navMenu.getElementsByClassName("navHref"),
     fixed = header.offsetTop;
 
+// navMini vars
 let navMiniPrevious = document.getElementById("navMiniPrevious"),
     navMiniNext = document.getElementById("navMiniNext"),
     navMiniScroll = document.querySelectorAll(".mainContentContainer");
+
+// heroBottom vars
+let heroLeftHeader = document.querySelectorAll(".headerCenterBottomLeftHeader"),
+    heroRightLi = document.querySelectorAll(".headerCenterBottomRightLiContainer"),
+    heroRightLiBorder = document.querySelectorAll(".headerCenterBottomRightLiBottom"),
+    heroRightLists = document.querySelectorAll(".headerCenterBottomRightList");
 
 // Nav Toggle
 function navCall() {
@@ -98,3 +106,13 @@ function navMiniScrollTo() {
 //     bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
 //   );
 // }
+
+// heroBottom Animations
+setTimeout (() => {
+  setTimeout (() => {heroRightLi[0].classList.add("heroLiAni")}, 500)
+  setTimeout (() => {heroRightLiBorder[0].classList.add("heroLiBorder1Ani")}, 900)
+  setTimeout (() => {heroRightLi[1].classList.add("heroLiAni")}, 1200)
+  setTimeout (() => {heroRightLiBorder[1].classList.add("heroLiBorder2Ani")}, 1600)
+  setTimeout (() => {heroRightLi[2].classList.add("heroLiAni")}, 1900)
+  setTimeout (() => {heroRightLiBorder[2].classList.add("heroLiBorder3Ani")}, 2300)
+}, 1000);
