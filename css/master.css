@@ -79,6 +79,7 @@ body {
 
 .dividerCenterContainer {
   position: relative;
+  right: 6.3%;
   width: 33%;
   z-index: 1;
 }
@@ -117,14 +118,13 @@ body {
 
 #navOffset {
   position: absolute;
-  top: 85vh;
+  top: 90vh;
 }
 
 .navHeadSide {
   position: fixed;
   margin-right: 6px;
   margin-left: 6px;
-  width: 33%;
   border-bottom: 1.3vh solid var(--color-main);
   border-radius: 1px;
   z-index: 1;
@@ -133,10 +133,12 @@ body {
 
 .navHeadSideLeft {
   left: 0;
+  width: 27%;
 }
 
 .navHeadSideRight {
   right: 0;
+  width: 39.3%;
 }
 
 .navHeadCenter {
@@ -227,13 +229,30 @@ body {
 .navHeadSideAni {
   opacity: 0;
   width: 0;
-  transition: opacity 0.5s, width 0.3s, ease-in 1s;
+  transition: opacity 0.5s, width 0.3s, ease-out 1s;
 }
 
 .navHeadSideAni2 {
   opacity: 0.1;
-  width: 33%;
   transition: opacity 0.5s, width 0.3s, ease-in 2s;
+}
+
+.navHeadSideLeftAni {
+  width: 27%;
+}
+
+.navHeadSideRightAni {
+  width: 39.3%;
+}
+
+@keyframes navHeadCenterAniA {
+  from {right: 6.3%;}
+  to {right: 0%;}
+}
+
+@keyframes navHeadCenterAniB {
+  from {right: 0%;}
+  to {right: 6.3%;}
 }
 
 .navHeadCenterAni {
@@ -244,6 +263,22 @@ body {
 .navHeadCenterAni2 {
   width: 33%;
   transition: width 1s, ease-out 1.4s;
+}
+
+.navHeadCenterAniA {
+  animation-name: navHeadCenterAniA;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+}
+
+.navHeadCenterAniB {
+  animation-name: navHeadCenterAniB;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
 }
 
 .navMenuAni {

@@ -1,9 +1,10 @@
-window.onscroll = function() {navCall()};
-
 // nav Vars
 let header = document.getElementById("navOffset"),
     navHeadCenter = document.getElementById("navHeadCenter"),
+    // dividerHeadCenter = document.querySelector(".navHeadCenter"),
     navHeadSide = document.getElementsByClassName("navHeadSide"),
+    navHeadSideLeft = document.querySelector(".navHeadSideLeft"),
+    navHeadSideRight = document.querySelector(".navHeadSideRight"),
     navMenu = document.getElementById("navMenuContainer"),
     navActive = navMenu.getElementsByClassName("navHref"),
     fixed = header.offsetTop;
@@ -19,6 +20,10 @@ let heroRightHeader = document.querySelectorAll(".headerBottomRightHeaderContain
     heroRightLiBorder = document.querySelectorAll(".headerBottomRightLiBottom"),
     heroRightLists = document.querySelectorAll(".headerBottomRightList");
 
+window.onscroll = function() {
+    navCall();
+};
+
 // Nav Toggle
 function navCall() {
   let dividerCenter = document.querySelector(".dividerCenter")
@@ -28,17 +33,29 @@ function navCall() {
       navHeadSide[i].classList.add("navHeadSideAni");
       navHeadSide[i].classList.remove("navHeadSideAni2");
     }
-    navHeadCenter.classList.add("navHeadCenterAni");
+    navHeadCenter.classList.add("navHeadCenterAniA");
     dividerCenter.style.borderBottom = "1.3vh solid var(--color-orangeAcc1)";
+    navHeadCenter.classList.remove("navHeadCenterAniB");
     navHeadCenter.classList.remove("navHeadCenterAni2");
-    navMenuCall();
+    navHeadSideLeft.classList.remove("navHeadSideLeftAni");
+    navHeadSideRight.classList.remove("navHeadSideRightAni");
+
+    // Wait for navHeadCenter animation before menuCall.
+    navHeadCenter.addEventListener('animationend', () => {
+      navHeadCenter.classList.add("navHeadCenterAni");
+      console.log('Transition ended');
+      navMenuCall();
+    });
   }
   else {
     for (var i = 0; i < navHeadSide.length; i++) {
       navHeadSide[i].classList.remove("navHeadSideAni");
       navHeadSide[i].classList.add("navHeadSideAni2");
     }
+    navHeadCenter.classList.remove("navHeadCenterAniA");
     navHeadCenter.classList.remove("navHeadCenterAni");
+    navHeadSideLeft.classList.add("navHeadSideLeftAni");
+    navHeadSideRight.classList.add("navHeadSideRightAni");
     navHeadCenter.classList.add("navHeadCenterAni2");
     dividerCenter.style.borderBottom = "1.3vh solid var(--color-mainAcc2)";
     navMenuAnimation();
@@ -90,6 +107,7 @@ navMiniPrevious.addEventListener("click", function() {
   navMiniScrollTo(index--);
 });
 
+// navMini navigate to article.
 function navMiniScrollTo() {
   if (index <= 0) {
     index = 0;
@@ -107,7 +125,7 @@ setTimeout (() => {
   heroRightLiAni();
 }, 1000);
 
-// heroBottonLi reversed recusive loop
+// heroBottonLi reversed recusive loop.  Runs through the heroRightLi array backwards on timeout.
 function heroRightLiAni () {
   let len = heroRightLi.length - 1;
   (function func(i) {
@@ -122,7 +140,7 @@ function heroRightLiAni () {
   })(len);
 };
 
-// heroBottomBorder call
+// heroBottomLiBorder call
 function heroLiBorder() {
   for (var i = 0; i < heroRightLiBorder.length; i++) {
     heroRightLiBorder[i].classList.add("heroLiBorder"+[i]+"Ani")
